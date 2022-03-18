@@ -20,7 +20,7 @@ $(call inherit-product, device/samsung/m30s-common/common.mk)
 # Inherit proprietary files
 ifeq ($(TARGET_PRODUCT), aosp_m307f)
     $(call inherit-product, vendor/samsung/m307f/m307f-vendor.mk)
-else ifeq ($(TARGET_PRODUCT), aosp_m307f)
+else ifeq ($(TARGET_PRODUCT), aosp_m307fn)
     $(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
 endif
 

@@ -23,14 +23,14 @@ include device/samsung/m30s-common/BoardConfigCommon.mk
 # Inherit from the proprietary configuration
 ifeq ($(TARGET_PRODUCT), aosp_m307f)
 	include vendor/samsung/m307f/BoardConfigVendor.mk
-else ifeq ($(TARGET_PRODUCT), aosp_m307f)
+else ifeq ($(TARGET_PRODUCT), aosp_m307fn)
 	include vendor/samsung/m307fn/BoardConfigVendor.mk
 endif
 
 # OTA
 ifeq ($(TARGET_PRODUCT), aosp_m307f)
 	TARGET_OTA_ASSERT_DEVICE := m307f,m30s,m30sdd
-else ifeq ($(TARGET_PRODUCT), aosp_m307f)
+else ifeq ($(TARGET_PRODUCT), aosp_m307fn)
 	TARGET_OTA_ASSERT_DEVICE := m307fn,m30s,m30sxx
 endif
 
