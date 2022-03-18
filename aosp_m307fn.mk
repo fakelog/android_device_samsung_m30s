@@ -15,9 +15,7 @@
 #
 
 # Inherit proprietary files
-ifeq ($(TARGET_PRODUCT), aosp_m307fn)
-    $(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
-endif
+$(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
 
 # Inherit from m30s device
 $(call inherit-product, device/samsung/m30s/device.mk)
