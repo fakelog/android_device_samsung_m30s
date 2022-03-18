@@ -26,13 +26,7 @@ endif
 # Inherit from m30s device
 $(call inherit-product, device/samsung/m30s/device.mk)
 
-# Boot Animation
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_BOOTANIMATION_HALF_RES := true
-TARGET_SCREEN_HEIGHT := 2340
-TARGET_SCREEN_WIDTH := 1080
-
-# Inherit some common PixelExperience stuff.
+# Inherit some common AOSP stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Enable updating of APEXes
