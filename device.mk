@@ -18,7 +18,11 @@
 $(call inherit-product, device/samsung/m30s-common/common.mk)
 
 # Inherit proprietary files
-$(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
+ifeq ($(TARGET_PRODUCT), aosp_m307f)
+    $(call inherit-product, vendor/samsung/m307f/m307f-vendor.mk)
+else ifeq ($(TARGET_PRODUCT), aosp_m307f)
+    $(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
+endif
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
@@ -28,7 +32,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init/init.vendor.rilchip.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilchip.rc \
     $(LOCAL_PATH)/configs/init/init.vendor.rilcommon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vendor.rilcommon.rc
 
+
 # NFC
+ifeq ($(TARGET_PRODUCT), aosp_m307fn)
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service.samsung \
     com.android.nfc_extras \
@@ -42,6 +48,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
+endif
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
