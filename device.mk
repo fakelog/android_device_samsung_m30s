@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2020-2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,9 +18,7 @@
 $(call inherit-product, device/samsung/m30s-common/common.mk)
 
 # Inherit proprietary files
-ifeq ($(TARGET_PRODUCT), aosp_m307f)
-    $(call inherit-product, vendor/samsung/m307f/m307f-vendor.mk)
-else ifeq ($(TARGET_PRODUCT), aosp_m307fn)
+ifeq ($(TARGET_PRODUCT), aosp_m307fn)
     $(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
 endif
 
