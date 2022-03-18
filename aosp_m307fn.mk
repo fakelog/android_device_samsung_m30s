@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2020-2021 The LineageOS Project
+# Copyright (C) 2022 The PixelExperience Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,31 +15,30 @@
 # limitations under the License.
 #
 
-## Inherit from generic products, most specific first
+# Inherit from generic products, most specific first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-## Inherit from m307fn device
-$(call inherit-product, device/samsung/m307fn/device.mk)
+# Inherit from m30s device
+$(call inherit-product, device/samsung/m30s/device.mk)
 
-## Boot Animation
+# Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
-## Inherit some common AOSP stuff
+# Inherit some common AOSP stuff
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-## Enable updating of APEXes
+# Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-## Device identifier, this must come after all inclusions
-PRODUCT_DEVICE := m307fn
+# Device identifier, this must come after all inclusion
 PRODUCT_NAME := aosp_m307fn
+PRODUCT_DEVICE := m30s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-M307FN
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_SHIPPING_API_LEVEL := 28
-
 PRODUCT_GMS_CLIENTID_BASE := android-samsung

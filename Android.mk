@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2022 The PixelExperience Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +17,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter m307fn, $(TARGET_DEVICE)),)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+ifneq ($(filter m30s, $(TARGET_DEVICE)),)
+	include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
