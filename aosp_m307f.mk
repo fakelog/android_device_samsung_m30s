@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2020-2021 The LineageOS Project
-# Copyright (C) 2022 The PixelExperience Project
+# Copyright (C) 2020-2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,9 +14,14 @@
 # limitations under the License.
 #
 
-# Inherit from m307fn device
-$(call inherit-product, device/samsung/m30s/aosp_m307fn.mk)
+# Inherit from m30s device
+$(call inherit-product, device/samsung/m30s/device.mk)
 
-# Device identifier, this must come after all inclusions
+# Device identifier, this must come after all inclusion
 PRODUCT_NAME := aosp_m307f
+PRODUCT_DEVICE := m30s
+PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-M307F
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
