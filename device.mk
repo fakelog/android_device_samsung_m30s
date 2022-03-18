@@ -17,11 +17,6 @@
 # Inherit from the common tree
 $(call inherit-product, device/samsung/m30s-common/common.mk)
 
-# Inherit proprietary files
-ifeq ($(TARGET_PRODUCT), aosp_m307fn)
-    $(call inherit-product, vendor/samsung/m307fn/m307fn-vendor.mk)
-endif
-
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
